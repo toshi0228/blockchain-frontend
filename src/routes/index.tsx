@@ -1,13 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import * as React from "react";
-import Top from "../pages/User/MainPage/Top";
-import Setting from "../pages/User/MyPage/Setting";
+import { publicRoutes } from "./publicRoutes";
 
 const RouteList = () => {
   return (
     <Routes>
-      <Route path="/" element={<Top />} />
-      <Route path="about" element={<Setting />} />
+      {publicRoutes.map((route) => {
+        return <Route path={route.path} element={<route.page />} />;
+      })}
     </Routes>
   );
 };
