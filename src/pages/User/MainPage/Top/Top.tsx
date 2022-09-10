@@ -1,11 +1,12 @@
 import * as React from "react";
-
+import { useNavigate } from "react-router-dom";
+import { paths } from "config";
 import { Container } from "./style";
-import { Link } from "react-router-dom";
 
 export interface ITopProps {}
 
 const Top: React.FC<ITopProps> = (props) => {
+  const navigate = useNavigate();
   return (
     <Container>
       <main>
@@ -13,7 +14,7 @@ const Top: React.FC<ITopProps> = (props) => {
         <p>You can do this, I believe in you.</p>
       </main>
       <nav>
-        <Link to="/about">About</Link>
+        <a onClick={() => navigate(paths.setting)}>About</a>
       </nav>
     </Container>
   );

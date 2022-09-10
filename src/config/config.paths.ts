@@ -4,8 +4,10 @@ export default {
 
   // user
   login: "/login",
-  logout: "/logout",
+  singUp: "/singUp",
+  transaction: "/transaction",
 
+  // myPage
   setting: "/mypage/setting",
 
   noMatch: "*",

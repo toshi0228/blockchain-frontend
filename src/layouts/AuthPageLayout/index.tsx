@@ -1,5 +1,6 @@
 import * as React from "react";
 import RouteList from "routes";
+import { paths } from "config";
 import { Container } from "./style";
 import { Link } from "react-router-dom";
 
@@ -8,17 +9,27 @@ export interface IAuthPageLayoutProps {}
 const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
   return (
     <Container>
-      <h1>Hello React Router</h1>
+      <h1>Block Chain Bank</h1>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to={paths.root}>ホーム</Link>
           </li>
+
           <li>
-            <Link to="/about">About</Link>
+            <Link to={paths.login}>ログインページ</Link>
           </li>
+
           <li>
-            <Link to="/users">Users</Link>
+            <Link to={paths.singUp}>新規登録</Link>
+          </li>
+
+          <li>
+            <Link to={paths.transaction}>トランザクション確認</Link>
+          </li>
+
+          <li>
+            <Link to={paths.setting}>マイページ</Link>
           </li>
         </ul>
       </nav>
@@ -27,34 +38,5 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
     </Container>
   );
 };
-
-// App.js
-function Home() {
-  return (
-    <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
-  );
-}
 
 export default AuthPageLayout;
