@@ -1,11 +1,10 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { AuthPageLayout } from "layouts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">ヘッダー</header>
-    </div>
-  );
+export default function App() {
+  // TODO
+  // 認証に関しての処理
+
+  return <AuthPageLayout />;
 }
-
-export default App;
