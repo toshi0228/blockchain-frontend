@@ -5,8 +5,14 @@ import { publicRoutes } from "./publicRoutes";
 const RouteList = () => {
   return (
     <Routes>
-      {publicRoutes.map((route) => {
-        return <Route path={route.path} element={<route.page />} />;
+      {publicRoutes.map((route, index) => {
+        return (
+          <Route
+            key={index.toString()}
+            path={route.path}
+            element={<route.page />}
+          />
+        );
       })}
     </Routes>
   );
