@@ -3,7 +3,7 @@ to: src/interfaces/interfaces.<%= h.changeCase.lower(name)%>.ts
 unless_exists: true
 ---
 
-export interface Get<%= h.changeCase.pascal(name) %>Response {
+export type Get<%= h.changeCase.pascal(name) %>Response = {
 
 }[]
 

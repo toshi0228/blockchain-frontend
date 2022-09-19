@@ -60,7 +60,7 @@ class <%= h.changeCase.pascal(name) %>Service extends ServiceBase {
     * @param
     */
     async deleteById(id: string) {
-        return await this.delete<Delete<%= h.changeCase.pascal(name) %>ByIdResponse>("***", id)
+        return await this.delete<Delete<%= h.changeCase.pascal(name) %>ByIdResponse>("***", { id })
     }
 }
 
