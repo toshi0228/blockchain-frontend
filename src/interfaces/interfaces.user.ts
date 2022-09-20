@@ -1,13 +1,7 @@
-import { User, Wallet } from "types/model/types.model.t";
+import { User } from "types/model/types.model.t";
 
 export type GetUserResponse = {
-  users: {
-    id: number;
-    name: string;
-    updatedAt: Date;
-    createdAt: Date;
-    wallet: Wallet;
-  }[];
+  users: User[];
 };
 
 export interface LoginUserRequest {
@@ -15,10 +9,7 @@ export interface LoginUserRequest {
   password: string;
 }
 
-export interface LoginUserResponse {
-  name: string;
-  status: string;
-}
+export type LoginUserResponse = User;
 
 export interface GetUserByIdResponse {}
 

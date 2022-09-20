@@ -5,6 +5,7 @@ export interface User {
   name: string;
   updatedAt: Date;
   createdAt: Date;
+  wallet: Wallet;
 }
 
 export interface Wallet {

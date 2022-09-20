@@ -2,7 +2,7 @@ import * as React from "react";
 import * as api from "apis";
 import { Container } from "./style";
 import { useState } from "react";
-import { User, Wallet } from "../../../../entity";
+import { User, Wallet } from "entity";
 
 export interface ILoginProps {}
 
@@ -15,6 +15,7 @@ const Login: React.FC<ILoginProps> = (props) => {
     console.log(res.data.name);
 
     if (res.status == 200) {
+      new Wallet(res.data.wallet.blockchainAddress.toString());
       new User(res.data.name);
       alert(` ${User.userName}さんログイン成功です`);
       window.location.reload();
