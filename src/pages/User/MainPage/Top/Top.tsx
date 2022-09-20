@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { paths } from "config";
-import { Container } from "./style";
 import { useEffect, useState } from "react";
 import * as api from "apis";
 import { GetUserResponse } from "interfaces";
+import { Container, Card } from "./style";
 
 export interface ITopProps {}
 
@@ -25,20 +25,16 @@ const Top: React.FC<ITopProps> = (props) => {
     <Container>
       <main>
         <h2>トップ画面</h2>
-        <p>You can do this, I believe in you.</p>
       </main>
 
+      <div>ユーザーの一覧</div>
       {getUserRes?.users?.map((user) => (
-        <>
-          <div>{user?.id}</div>
-          <div>{user?.name}</div>
-          <div>{user?.wallet.blockchainAddress}</div>
-        </>
+        <Card>
+          <div>{`ユーザーのID： ${user?.id}`}</div>
+          <div>{`名前： ${user?.name}`}</div>
+          <div>{`ウォレットアドレス： ${user?.wallet.blockchainAddress}`}</div>
+        </Card>
       ))}
-
-      <nav>
-        <a onClick={() => navigate(paths.setting)}>About</a>
-      </nav>
     </Container>
   );
 };
