@@ -10,6 +10,16 @@ export type GetUserResponse = {
   }[];
 };
 
+export interface LoginUserRequest {
+  name: string;
+  password: string;
+}
+
+export interface LoginUserResponse {
+  name: string;
+  status: string;
+}
+
 export interface GetUserByIdResponse {}
 
 export interface CreateUserResponse {}

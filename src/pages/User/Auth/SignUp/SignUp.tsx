@@ -11,14 +11,6 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
   const [name, setName] = useState<string>();
   const [password, setPassword] = useState<string>();
 
-  useEffect(() => {
-    init().then((r) => "ローディング完了");
-  }, []);
-
-  const init = async () => {
-    const res = await axios.get("http://localhost:4000/user");
-  };
-
   const submit = async () => {
     const res = await axios.post<{ name: string; walletAddress: string }>(
       "http://localhost:4000/user",

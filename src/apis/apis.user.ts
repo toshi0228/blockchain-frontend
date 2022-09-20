@@ -2,6 +2,8 @@ import ServiceBase from "./apis.base";
 import {
   CreateUserResponse,
   CreateUserRequest,
+  LoginUserRequest,
+  LoginUserResponse,
   GetUserResponse,
   GetUserByIdResponse,
   UpdateUserResponse,
@@ -25,6 +27,14 @@ class UserService extends ServiceBase {
   /**
    * @param
    */
+  async login(data: LoginUserRequest, params?: QueryParams) {
+    return await this.post<LoginUserResponse, LoginUserRequest>(
+      apis.login,
+      data,
+      params
+    );
+  }
+
   async create(data: CreateUserRequest, params?: QueryParams) {
     return await this.post<CreateUserResponse, CreateUserRequest>(
       "***",
@@ -37,7 +47,7 @@ class UserService extends ServiceBase {
    * @param
    */
   async getList(params?: QueryParams) {
-    return await this.get<GetUserResponse>(apis.users, params);
+    return await this.get<GetUserResponse>(apis.user, params);
   }
 
   /**
