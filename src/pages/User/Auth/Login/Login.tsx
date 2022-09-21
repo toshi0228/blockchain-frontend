@@ -11,17 +11,15 @@ const Login: React.FC<ILoginProps> = (props) => {
   const [password, setPassword] = useState<string>("");
 
   const submit = async () => {
-    const res = await api.user.login({ name, password });
-    console.log(res.data.name);
-
-    if (res.status == 200) {
-      new Wallet(res.data.wallet.blockchainAddress.toString());
-      new User(res.data.name);
-      alert(` ${User.userName}さんログイン成功です`);
-      window.location.reload();
-    } else {
-      alert(` ${User.userName}さんログイン失敗です`);
-    }
+    await api.user
+      .login({ name, password })
+      .then((res) => {
+        new Wallet(res.data.wallet.blockchainAddress.toString());
+        new User(res.data.name);
+        alert(` ${User.userName}さんログイン成功です`);
+        window.location.reload();
+      })
+      .catch((res) => alert(` ${User.userName}さんログイン失敗です`));
   };
 
   return (

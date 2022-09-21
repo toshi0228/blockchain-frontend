@@ -8,3 +8,7 @@ export const Card = styled.div`
   padding: 24px;
   width: 560px;
 `;
+
+export const InputContainer = styled.div`
+  margin-bottom: 40px;
+`;
