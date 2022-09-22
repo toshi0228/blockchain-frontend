@@ -22,13 +22,6 @@ import {
 class <%= h.changeCase.pascal(name) %>Service extends ServiceBase {
 
     /**
-    *
-    */
-    constructor() {
-        super()
-    }
-
-    /**
     * @param
     */
     async create(data: Create<%= h.changeCase.pascal(name) %>Request, params?: QueryParams) {

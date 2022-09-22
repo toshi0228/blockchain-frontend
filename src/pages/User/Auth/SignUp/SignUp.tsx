@@ -1,34 +1,33 @@
 import * as React from "react";
-
-import axios from "axios";
-import { Container, InputContainer } from "./style";
-import { useEffect, useState, useContext } from "react";
+import { useState } from "react";
+import * as api from "apis";
+import { SignUpResponse } from "interfaces";
+import { Container } from "./style";
 import { User, Wallet } from "entity";
 
 export interface ISignUpProps {}
 
 const SignUp: React.FC<ISignUpProps> = (props) => {
-  const [name, setName] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [signUpUser, setSignUpUser] = useState<SignUpResponse>();
 
   const submit = async () => {
-    const res = await axios.post<{ name: string; walletAddress: string }>(
-      "http://localhost:4000/user",
-      {
-        name,
-        password,
-      }
-    );
+    await api.auth
+      .signUp({ name, password })
+      .then((res) => {
+        setSignUpUser(res.data);
 
-    if (res.status == 200) {
-      new Wallet(res.data.walletAddress);
-      new User(res.data.name);
+        new Wallet(signUpUser!.wallet.address);
+        new User(signUpUser!.user.name, signUpUser!.cryptKey.privateKey, signUpUser!.cryptKey.publicKey);
 
-      alert(
-        ` ${User.userName}さん登録成功です \n あなたのウォレットアドレス \n ${Wallet.address}`
-      );
-      window.location.reload();
-    }
+        alert(` ${User.name}さん登録成功です \n あなたのウォレットアドレス \n ${signUpUser!.wallet.address}`);
+        window.location.reload();
+      })
+      .catch((e) => {
+        console.log(e);
+        alert(` ${name}さん登録失敗です`);
+      });
   };
 
   return (

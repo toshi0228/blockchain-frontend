@@ -1,4 +1,7 @@
-export default {
+const apiPath = {
   user: "/user",
-  login: "/user/login",
+  authSignUp: "/auth/signup",
+  authLogin: "auth/login",
 };
+
+export default apiPath;

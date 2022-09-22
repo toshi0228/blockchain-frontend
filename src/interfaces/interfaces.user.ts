@@ -1,15 +1,8 @@
-import { User } from "types/model/types.model.t";
+import { User, Wallet } from "types/model/types.model.t";
 
 export type GetUserResponse = {
-  users: User[];
+  users: { user: User; wallet: Wallet }[];
 };
-
-export interface LoginUserRequest {
-  name: string;
-  password: string;
-}
-
-export type LoginUserResponse = User;
 
 export interface GetUserByIdResponse {}
 

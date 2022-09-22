@@ -1,14 +1,10 @@
 import ServiceBase from "./apis.base";
 import {
-  CreateUserResponse,
-  CreateUserRequest,
-  LoginUserRequest,
-  LoginUserResponse,
-  GetUserResponse,
-  GetUserByIdResponse,
-  UpdateUserResponse,
-  UpdateUserRequest,
   DeleteUserByIdResponse,
+  GetUserByIdResponse,
+  GetUserResponse,
+  UpdateUserRequest,
+  UpdateUserResponse,
 } from "interfaces";
 import { apis } from "../config";
 
@@ -17,32 +13,6 @@ import { apis } from "../config";
  * @extends {Service}
  */
 class UserService extends ServiceBase {
-  /**
-   *
-   */
-  constructor() {
-    super();
-  }
-
-  /**
-   * @param
-   */
-  async login(data: LoginUserRequest, params?: QueryParams) {
-    return await this.post<LoginUserResponse, LoginUserRequest>(
-      apis.login,
-      data,
-      params
-    );
-  }
-
-  async create(data: CreateUserRequest, params?: QueryParams) {
-    return await this.post<CreateUserResponse, CreateUserRequest>(
-      "***",
-      data,
-      params
-    );
-  }
-
   /**
    * @param
    */

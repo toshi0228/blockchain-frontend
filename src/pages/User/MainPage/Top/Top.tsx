@@ -1,10 +1,9 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
-import { paths } from "config";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as api from "apis";
 import { GetUserResponse } from "interfaces";
-import { Container, Card, InputContainer } from "./style";
+import { Card, Container, InputContainer } from "./style";
 
 export interface ITopProps {}
 
@@ -19,8 +18,9 @@ const Top: React.FC<ITopProps> = (props) => {
   }, []);
 
   const init = async () => {
-    const res = await api.user.getList();
-    setGetUserRes(res.data);
+    await api.user.getList().then((res) => {
+      setGetUserRes(res.data);
+    });
   };
 
   const submit = () => {
@@ -47,11 +47,11 @@ const Top: React.FC<ITopProps> = (props) => {
       </InputContainer>
 
       <div>ユーザーの一覧</div>
-      {getUserRes?.users?.map((user) => (
+      {getUserRes?.users?.map((item) => (
         <Card>
-          <div>{`ユーザーのID： ${user?.id}`}</div>
-          <div>{`名前： ${user?.name}`}</div>
-          <div>{`ウォレットアドレス： ${user?.wallet.blockchainAddress}`}</div>
+          <div>{`ユーザーのID： ${item.user?.id}`}</div>
+          <div>{`名前： ${item.user?.name}`}</div>
+          <div>{`ウォレットアドレス： ${item?.wallet.address}`}</div>
         </Card>
       ))}
     </Container>

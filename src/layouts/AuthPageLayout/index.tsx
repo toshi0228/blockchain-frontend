@@ -12,12 +12,17 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
   const [isLogin, setLogin] = useState<boolean>(false);
 
   useEffect(() => {
-    if (User.userName && Wallet.address) {
+    if (User.name && Wallet.address) {
       setLogin(true);
     } else {
       setLogin(false);
     }
   }, []);
+
+  const logout = () => {
+    window.localStorage.clear();
+    window.location.reload();
+  };
 
   return (
     <Container>
@@ -30,7 +35,7 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <li>
-            <Link to={paths.login}>ログインページ</Link>
+            <Link to={paths.login}>ログイン</Link>
           </li>
 
           <li>
@@ -46,10 +51,7 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <li>
-            <Link
-              to={paths.setting}
-              onClick={() => window.localStorage.clear()}
-            >
+            <Link to={paths.setting} onClick={() => logout()}>
               ログアウト
             </Link>
           </li>
@@ -63,7 +65,7 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
 
         {isLogin && (
           <>
-            <div>{`名前: ${User.userName}`}</div>
+            <div>{`名前: ${User.name}`}</div>
             <div>{`ウォレットアドレス: ${Wallet.address}`}</div>
           </>
         )}
