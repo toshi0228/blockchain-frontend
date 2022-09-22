@@ -18,8 +18,8 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
       .then((res) => {
         setSignUpUser(res.data);
 
-        new Wallet(signUpUser!.wallet.address);
-        new User(signUpUser!.user.name, signUpUser!.cryptKey.privateKey, signUpUser!.cryptKey.publicKey);
+        new Wallet(res.data.wallet.address);
+        new User(res.data.user.name, res.data.cryptKey.privateKey, res.data.cryptKey.publicKey);
 
         alert(` ${User.name}さん登録成功です \n あなたのウォレットアドレス \n ${signUpUser!.wallet.address}`);
         window.location.reload();

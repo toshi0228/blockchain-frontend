@@ -10,7 +10,7 @@ export interface ILoginProps {}
 const Login: React.FC<ILoginProps> = (props) => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [loginUser, setLoginUser] = useState<LoginResponse>();
+  const [, setLoginUser] = useState<LoginResponse>();
 
   const submit = async () => {
     await api.auth
