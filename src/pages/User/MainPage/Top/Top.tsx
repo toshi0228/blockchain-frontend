@@ -19,6 +19,7 @@ const Top: React.FC<ITopProps> = (props) => {
 
   const init = async () => {
     await api.user.getList().then((res) => {
+      debugger;
       setGetUserRes(res.data);
     });
   };

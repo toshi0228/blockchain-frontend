@@ -59,14 +59,14 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
       </nav>
 
       <UserInfoContainer>
-        <div>
-          {`ログイン状態: ${Wallet.address ? "ログイン中" : "未ログイン"}`}
-        </div>
+        <div>{`ログイン状態: ${Wallet.address ? "ログイン中" : "未ログイン"}`}</div>
 
         {isLogin && (
           <>
             <div>{`名前: ${User.name}`}</div>
             <div>{`ウォレットアドレス: ${Wallet.address}`}</div>
+            <div>{`秘密鍵: ${User.privateKey}`}</div>
+            <div>{`公開鍵: ${User.publicKey}`}</div>
           </>
         )}
       </UserInfoContainer>
