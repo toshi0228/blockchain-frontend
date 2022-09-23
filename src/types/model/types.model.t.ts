@@ -8,7 +8,7 @@ export interface User {
   createdAt: Date;
 }
 
-// サイフ
+// ウォレット
 export interface Wallet {
   iD: number;
   userID: number;
@@ -22,3 +22,9 @@ export interface CryptKey {
   privateKey: string;
   publicKey: string;
 }
+
+export type Transaction = {
+  senderAddress: string;
+  recipientAddress: string;
+  amount: number;
+};

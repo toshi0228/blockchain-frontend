@@ -1,31 +1,48 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import * as api from "apis";
+import { ChangeEvent, useEffect, useState } from "react";
+import * as apis from "apis";
 import { GetUserResponse } from "interfaces";
 import { Card, Container, InputContainer } from "./style";
+import { User, Wallet } from "entity";
 
 export interface ITopProps {}
 
 const Top: React.FC<ITopProps> = (props) => {
-  const navigate = useNavigate();
   const [getUserRes, setGetUserRes] = useState<GetUserResponse>();
-  const [recipient, setRecipient] = useState();
-  const [amount, setAmount] = useState();
+  const [recipientAddress, setRecipientAddress] = useState<string>();
+  const [amount, setAmount] = useState<number>(0);
 
   useEffect(() => {
     init().then((r) => "ローディング完了");
   }, []);
 
   const init = async () => {
-    await api.user.getList().then((res) => {
-      debugger;
+    await apis.user.getList().then((res) => {
       setGetUserRes(res.data);
     });
   };
 
-  const submit = () => {
-    console.log("送信処理");
+  const inputAmount = (e: ChangeEvent<HTMLInputElement>) => {
+    setAmount(Number(e.target.value));
+  };
+
+  const submit = async () => {
+    if (!recipientAddress || amount === 0) return;
+
+    await apis.transaction
+      .create({
+        recipientAddress: recipientAddress,
+        senderAddress: Wallet.address,
+        amount: amount,
+        privateKey: User.privateKey,
+        publicKey: User.publicKey,
+      })
+
+      .then((res) => {
+        alert("トランザクション送信に成功");
+      })
+
+      .catch((e) => alert("トランザクションの送信失敗"));
   };
 
   return (
@@ -37,11 +54,11 @@ const Top: React.FC<ITopProps> = (props) => {
       <InputContainer>
         <div>
           <div>送信先</div>
-          <input name="recipient" />
+          <input name="recipientAddress" onChange={(e) => setRecipientAddress(e.target.value)} />
         </div>
         <div>
           <div>送金額</div>
-          <input name="amount" />
+          <input name="amount" onChange={(e) => inputAmount(e)} />
         </div>
 
         <button onClick={() => submit()}>送金</button>

@@ -10,7 +10,7 @@ export interface ISignUpProps {}
 const SignUp: React.FC<ISignUpProps> = (props) => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [signUpUser, setSignUpUser] = useState<SignUpResponse>();
+  const [, setSignUpUser] = useState<SignUpResponse>();
 
   const submit = async () => {
     await api.auth
@@ -21,7 +21,7 @@ const SignUp: React.FC<ISignUpProps> = (props) => {
         new Wallet(res.data.wallet.address);
         new User(res.data.user.name, res.data.cryptKey.privateKey, res.data.cryptKey.publicKey);
 
-        alert(` ${User.name}さん登録成功です \n あなたのウォレットアドレス \n ${signUpUser!.wallet.address}`);
+        alert(` ${name}さん登録成功です \n あなたのウォレットアドレス \n ${res.data.wallet.address}`);
         window.location.reload();
       })
       .catch((e) => {
