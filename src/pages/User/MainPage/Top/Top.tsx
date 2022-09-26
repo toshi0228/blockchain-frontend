@@ -3,7 +3,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import * as apis from "apis";
 import { GetUserResponse } from "interfaces";
 import { Card, Container, InputContainer } from "./style";
-import { User, Wallet } from "entity";
+import { Transaction, User, Wallet } from "entity";
 
 export interface ITopProps {}
 
@@ -29,13 +29,26 @@ const Top: React.FC<ITopProps> = (props) => {
   const submit = async () => {
     if (!recipientAddress || amount === 0) return;
 
+    const tx = {
+      recipientAddress: recipientAddress,
+      senderAddress: Wallet.address,
+      amount: amount,
+    };
+
+    console.log(JSON.stringify(tx));
+
+    const res = new Transaction(User.privateKey, JSON.stringify(tx));
+
+    console.log({ pubKet: res.getPublicKeyStr(), hash: res.getHashStr(), sig: res.getSignatureStr() });
+
     await apis.transaction
       .create({
         recipientAddress: recipientAddress,
         senderAddress: Wallet.address,
         amount: amount,
         privateKey: User.privateKey,
-        publicKey: User.publicKey,
+        publicKey: res.getPublicKeyStr(),
+        signature: res.getSignatureStr(),
       })
 
       .then((res) => {

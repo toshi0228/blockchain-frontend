@@ -12,4 +12,5 @@ export type CreateTransactionRequest = {
   amount: number;
   privateKey: string;
   publicKey: string;
+  signature: string;
 };
