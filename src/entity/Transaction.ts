@@ -1,5 +1,5 @@
 import { ec } from "elliptic";
-import keccak256 from "keccak256";
+import sha256 from "crypto-js/sha256";
 import { Buffer } from "buffer";
 
 // @ts-ignore //keccak256でbufferを参照できてなかったので追加
@@ -7,16 +7,16 @@ window.Buffer = Buffer;
 
 class Transaction {
   private readonly keyPair: ec.KeyPair; // 秘密鍵、公開鍵のペア
-  private readonly hash: Buffer; // ハッシュ
+  private readonly hash: string; // ハッシュ(※hex)
   private readonly signature: ec.Signature; // 署名
 
   constructor(hexPrivateKey: string, plainData: string) {
-    debugger;
     // 16進数の秘密鍵から、byte配列を作成
     const privateKey = Buffer.from(hexPrivateKey, "hex");
 
     // データのハッシュを作成
-    this.hash = keccak256("plainData");
+    const hashDigest = sha256(plainData);
+    this.hash = hashDigest.toString();
 
     // 秘密鍵から公開鍵を作成
     let ecdsa = new ec("secp256k1");
@@ -35,7 +35,7 @@ class Transaction {
 
   // ハッシュ値の取得 ※16進数の文字列
   public getHashStr(): string {
-    return Buffer.from(this.hash).toString("hex");
+    return this.hash;
   }
 
   // 公開鍵を16進数の文字列
