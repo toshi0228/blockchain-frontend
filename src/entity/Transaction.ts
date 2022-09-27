@@ -2,9 +2,6 @@ import { ec } from "elliptic";
 import sha256 from "crypto-js/sha256";
 import { Buffer } from "buffer";
 
-// @ts-ignore //keccak256でbufferを参照できてなかったので追加
-window.Buffer = Buffer;
-
 class Transaction {
   private readonly keyPair: ec.KeyPair; // 秘密鍵、公開鍵のペア
   private readonly hash: string; // ハッシュ(※hex)
