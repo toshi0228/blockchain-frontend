@@ -5,6 +5,7 @@ import { Container, UserInfoContainer } from "./style";
 import { Link } from "react-router-dom";
 import { Wallet, User } from "entity";
 import { useEffect, useState } from "react";
+import * as apis from "apis";
 
 export interface IAuthPageLayoutProps {}
 
@@ -22,6 +23,16 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
   const logout = () => {
     window.localStorage.clear();
     window.location.reload();
+  };
+
+  const createBlock = async () => {
+    await apis.block
+      .create({})
+      .then(() => alert("ブロックの作成に成功しました"))
+      .catch((e) => {
+        console.log(e);
+        alert("ブロックの作成に失敗しました");
+      });
   };
 
   return (
@@ -48,6 +59,12 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
 
           <li>
             <Link to={paths.setting}>マイページ</Link>
+          </li>
+
+          <li>
+            <Link to={paths.setting} onClick={() => createBlock()}>
+              始まりブロックを作成
+            </Link>
           </li>
 
           <li>
