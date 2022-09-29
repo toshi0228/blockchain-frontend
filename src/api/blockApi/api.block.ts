@@ -1,13 +1,12 @@
-import ServiceBase from "./apis.base";
+import ServiceBase from "../api.base";
+import { CreateBlockRequest, UpdateBlockRequest } from "./req/req.block";
 import {
   CreateBlockResponse,
-  CreateBlockRequest,
   GetBlockResponse,
   GetBlockByIdResponse,
   UpdateBlockResponse,
-  UpdateBlockRequest,
   DeleteBlockByIdResponse,
-} from "interfaces";
+} from "./res/res.block";
 import { apiPath } from "config";
 
 /**

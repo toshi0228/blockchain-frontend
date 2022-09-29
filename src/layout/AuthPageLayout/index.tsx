@@ -1,11 +1,11 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
+import * as api from "api";
 import RouteList from "router";
 import { path } from "config";
 import { Container, UserInfoContainer } from "./style";
 import { Link } from "react-router-dom";
 import { Wallet, User } from "entity";
-import { useEffect, useState } from "react";
-import * as apis from "apis";
 
 export interface IAuthPageLayoutProps {}
 
@@ -26,7 +26,7 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
   };
 
   const createBlock = async () => {
-    await apis.block
+    await api.block
       .create({})
       .then(() => alert("ブロックの作成に成功しました"))
       .catch((e) => {
