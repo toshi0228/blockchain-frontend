@@ -1,5 +1,5 @@
 ---
-to: src/components/molecules/<%= name %>/index.tsx
+to: src/uiParts/<%= name %>/index.tsx
 unless_exists: true
 ---
 export { default } from './<%= name %>';

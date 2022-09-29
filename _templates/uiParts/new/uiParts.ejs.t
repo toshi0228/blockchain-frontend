@@ -1,5 +1,5 @@
 ---
-to: src/components/molecules/<%= name %>/<%= name %>.tsx
+to: src/uiParts/<%= name %>/<%= name %>.tsx
 unless_exists: true
 ---
 import * as React from 'react';
