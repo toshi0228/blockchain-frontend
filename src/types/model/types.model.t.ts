@@ -24,7 +24,10 @@ export interface CryptKey {
 }
 
 export type Transaction = {
+  id: number;
   senderAddress: string;
   recipientAddress: string;
   amount: number;
+  createdAt: Date;
+  updatedAt: Date;
 };

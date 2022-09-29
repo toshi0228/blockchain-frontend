@@ -1,10 +1,11 @@
-export type GetTransactionResponse = {}[]
+import { Transaction } from "types/model/types.model.t";
 
-export type GetTransactionByIdResponse = {}
+export type GetTransactionResponse = { transactions: Transaction[] };
 
-export type CreateTransactionResponse = {}
+export type GetTransactionByIdResponse = {};
 
-export type UpdateTransactionResponse = {}
+export type CreateTransactionResponse = {};
 
-export type DeleteTransactionByIdResponse = {}
+export type UpdateTransactionResponse = {};
 
+export type DeleteTransactionByIdResponse = {};
