@@ -12,6 +12,7 @@ import {
     Update<%= h.changeCase.pascal(name) %>Response,
     Delete<%= h.changeCase.pascal(name) %>ByIdResponse,
 } from  "./res/res.<%= h.changeCase.camel(name)%>";
+import { apiPath } from "config";
 
 /**
  * @class MemberService
