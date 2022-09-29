@@ -1,5 +1,5 @@
 import axios from "axios";
-import { jwt } from "helpers";
+import { jwt } from "helper";
 
 export default class ServiceBase {
   /**
