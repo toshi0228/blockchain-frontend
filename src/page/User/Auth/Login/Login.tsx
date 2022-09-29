@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import * as api from "apis";
+import * as api from "api";
 import { User, Wallet } from "entity";
-import { LoginResponse } from "interfaces";
+import { LoginResponse } from "api/authApi";
 import { Container } from "./style";
 
 export interface ILoginProps {}

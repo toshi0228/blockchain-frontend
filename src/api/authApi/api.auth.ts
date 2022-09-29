@@ -1,5 +1,6 @@
-import ServiceBase from "./apis.base";
-import { SignUpRequest, SignUpResponse, LoginRequest, LoginResponse } from "interfaces";
+import ServiceBase from "../api.base";
+import { LoginRequest, SignUpRequest } from "./req/req.auth";
+import { SignUpResponse, LoginResponse } from "./res/res.auth";
 import { apiPath } from "config";
 
 /**

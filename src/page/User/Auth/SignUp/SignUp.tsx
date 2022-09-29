@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import * as api from "apis";
-import { SignUpResponse } from "interfaces";
+import * as api from "api";
+import { SignUpResponse } from "api/authApi";
 import { Container } from "./style";
 import { User, Wallet } from "entity";
 
