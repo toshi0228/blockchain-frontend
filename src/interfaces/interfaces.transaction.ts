@@ -1,4 +1,4 @@
-import { Transaction } from "types/model/types.model.t";
+import { Transaction } from "type/model/type.model.t";
 
 export type GetTransactionResponse = {}[];
 

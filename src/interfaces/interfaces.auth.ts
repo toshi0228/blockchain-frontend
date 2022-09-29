@@ -1,4 +1,4 @@
-import { User, Wallet, CryptKey } from "../types/model/types.model.t";
+import { User, Wallet, CryptKey } from "../type/model/type.model.t";
 
 export interface SignUpRequest {
   name: string;

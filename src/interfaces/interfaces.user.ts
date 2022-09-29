@@ -1,4 +1,4 @@
-import { User, Wallet } from "types/model/types.model.t";
+import { User, Wallet } from "type/model/type.model.t";
 
 export type GetUserResponse = {
   users: { user: User; wallet: Wallet }[];
