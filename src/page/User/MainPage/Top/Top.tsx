@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ChangeEvent, useEffect, useState } from "react";
-import * as apis from "apis";
-import { GetUserResponse } from "interfaces";
+import * as api from "api";
+import { GetUserResponse } from "api/userApi";
 import { Card, Container, InputContainer } from "./style";
 import { Transaction, User, Wallet } from "entity";
 
@@ -17,7 +17,7 @@ const Top: React.FC<ITopProps> = (props) => {
   }, []);
 
   const init = async () => {
-    await apis.user.getList().then((res) => {
+    await api.user.getList().then((res) => {
       setGetUserRes(res.data);
     });
   };
@@ -41,7 +41,7 @@ const Top: React.FC<ITopProps> = (props) => {
 
     console.log({ pubKet: res.getPublicKeyStr(), hash: res.getHashStr(), sig: res.getSignatureStr() });
 
-    await apis.transaction
+    await api.transaction
       .create({
         recipientAddress: recipientAddress,
         senderAddress: Wallet.address,

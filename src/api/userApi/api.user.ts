@@ -1,18 +1,26 @@
-import ServiceBase from "./apis.base";
+import ServiceBase from "../api.base";
+import { CreateUserRequest, UpdateUserRequest } from "./req/req.user";
 import {
-  DeleteUserByIdResponse,
-  GetUserByIdResponse,
+  CreateUserResponse,
   GetUserResponse,
-  UpdateUserRequest,
+  GetUserByIdResponse,
   UpdateUserResponse,
-} from "interfaces";
-import { apiPath } from "../config";
+  DeleteUserByIdResponse,
+} from "./res/res.user";
+import { apiPath } from "config";
 
 /**
  * @class MemberService
  * @extends {Service}
  */
 class UserService extends ServiceBase {
+  /**
+   * @param
+   */
+  async create(data: CreateUserRequest, params?: QueryParams) {
+    return await this.post<CreateUserResponse, CreateUserRequest>("***", data, params);
+  }
+
   /**
    * @param
    */
