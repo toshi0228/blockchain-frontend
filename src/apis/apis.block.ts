@@ -8,7 +8,7 @@ import {
   UpdateBlockRequest,
   DeleteBlockByIdResponse,
 } from "interfaces";
-import { apis } from "../config";
+import { apiPath } from "config";
 
 /**
  * @class MemberService
@@ -19,7 +19,7 @@ class BlockService extends ServiceBase {
    * @param
    */
   async create(data: CreateBlockRequest) {
-    return await this.post<CreateBlockResponse, CreateBlockRequest>(apis.block, data);
+    return await this.post<CreateBlockResponse, CreateBlockRequest>(apiPath.block, data);
   }
 
   /**

@@ -5,7 +5,7 @@ import {
   GetTransactionByIdResponse,
   GetTransactionResponse,
 } from "interfaces";
-import { apis } from "../config";
+import { apiPath } from "config";
 
 /**
  * @class MemberService
@@ -16,7 +16,7 @@ class TransactionService extends ServiceBase {
    * @param
    */
   async create(data: CreateTransactionRequest) {
-    return await this.post<CreateTransactionResponse, CreateTransactionRequest>(apis.transaction, data);
+    return await this.post<CreateTransactionResponse, CreateTransactionRequest>(apiPath.transaction, data);
   }
 
   /**

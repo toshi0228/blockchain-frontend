@@ -6,7 +6,7 @@ import {
   UpdateUserRequest,
   UpdateUserResponse,
 } from "interfaces";
-import { apis } from "../config";
+import { apiPath } from "../config";
 
 /**
  * @class MemberService
@@ -17,7 +17,7 @@ class UserService extends ServiceBase {
    * @param
    */
   async getList(params?: QueryParams) {
-    return await this.get<GetUserResponse>(apis.user, params);
+    return await this.get<GetUserResponse>(apiPath.user, params);
   }
 
   /**
