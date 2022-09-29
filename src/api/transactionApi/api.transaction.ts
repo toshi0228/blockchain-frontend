@@ -7,6 +7,7 @@ import {
   UpdateTransactionResponse,
   DeleteTransactionByIdResponse,
 } from "./res/res.transaction";
+import { apis } from "../../config";
 
 /**
  * @class MemberService
@@ -24,7 +25,7 @@ class TransactionService extends ServiceBase {
    * @param
    */
   async getList(params?: QueryParams) {
-    return await this.get<GetTransactionResponse>("***", params);
+    return await this.get<GetTransactionResponse>(apis.transaction, params);
   }
 
   /**
