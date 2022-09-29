@@ -33,6 +33,7 @@ const Transaction: React.FC<ITransactionProps> = (props) => {
           <div>{`送信者のアドレス: ${tx.senderAddress}`}</div>
           <div>{`受信者のアドレス: ${tx.recipientAddress}`}</div>
           <div>{`送金額: ${tx.amount}`}</div>
+          <div>{`作成時間: ${tx.createdAt}`}</div>
         </TxContainer>
       ))}
     </Container>
