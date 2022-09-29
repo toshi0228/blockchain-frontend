@@ -1,4 +1,4 @@
 ---
-to: '<%= isInject ? `src/helpers/index.ts` : null %>'
+to: '<%= isInject ? `src/helper/index.ts` : null %>'
 unless_exists: true
 ---

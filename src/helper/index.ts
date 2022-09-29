@@ -1,1 +1,1 @@
-export { default as jwt } from "./helpers.jwt";
+export { default as jwt } from "./helper.jwt";
