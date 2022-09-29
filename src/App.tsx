@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthPageLayout } from "layouts";
+import { AuthPageLayout } from "layout";
 
 export default function App() {
   // TODO
