@@ -1,19 +1,17 @@
 ---
-to: src/apis/apis.<%= h.changeCase.lower(name)%>.ts
+to: src/api/<%= h.changeCase.camel(name)%>Api/api.<%= h.changeCase.camel(name)%>.ts
 unless_exists: true
 ---
 
-import ServiceBase from './apis.base';
+import ServiceBase from "../api.base";
+import { Create<%= h.changeCase.pascal(name) %>Request, Update<%= h.changeCase.pascal(name) %>Request } from  "./req/req.<%= h.changeCase.camel(name)%>";
 import {
     Create<%= h.changeCase.pascal(name) %>Response,
-    Create<%= h.changeCase.pascal(name) %>Request,
     Get<%= h.changeCase.pascal(name) %>Response,
     Get<%= h.changeCase.pascal(name) %>ByIdResponse,
     Update<%= h.changeCase.pascal(name) %>Response,
-    Update<%= h.changeCase.pascal(name) %>Request,
     Delete<%= h.changeCase.pascal(name) %>ByIdResponse,
-} from  "interfaces"
-
+} from  "./res/res.<%= h.changeCase.camel(name)%>";
 
 /**
  * @class MemberService

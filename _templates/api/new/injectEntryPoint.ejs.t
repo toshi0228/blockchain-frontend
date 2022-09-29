@@ -1,8 +1,8 @@
 ---
-to: src/apis/index.ts
+to: src/api/index.ts
 unless_exists: true
 inject: true
 append: dependencies
 ---
 
-export { default as <%= h.changeCase.lower(name) %> } from "./apis.<%= h.changeCase.lower(name) %>"
+export { default as <%= h.changeCase.camel(name) %> } from "./<%= h.changeCase.camel(name)%>Api/api.<%= h.changeCase.camel(name) %>"
