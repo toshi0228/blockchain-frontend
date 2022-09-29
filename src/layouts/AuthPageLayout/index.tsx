@@ -58,12 +58,16 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <li>
+            <Link to={paths.transactionPool}>トランザクションプールの確認</Link>
+          </li>
+
+          <li>
             <Link to={paths.setting}>マイページ</Link>
           </li>
 
           <li>
             <Link to={paths.setting} onClick={() => createBlock()}>
-              始まりブロックを作成
+              ブロックを作成
             </Link>
           </li>
 

@@ -4,11 +4,12 @@ export default {
 
   // user
   login: "/login",
-  singUp: "/singUp",
+  singUp: "/sing-up",
   transaction: "/transaction",
+  transactionPool: "/transaction-pool",
 
   // myPage
-  setting: "/mypage/setting",
+  setting: "/my-page/setting",
 
   noMatch: "*",
 };
