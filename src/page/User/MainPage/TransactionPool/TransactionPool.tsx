@@ -23,7 +23,7 @@ const TransactionPool: React.FC<ITransactionPoolProps> = (props) => {
   };
   return (
     <Container>
-      トランザクションプール
+      <h2>トランザクションプール</h2>
       {getTxPoolRes?.transactionPool?.map((tx, i) => (
         <TxPoolContainer key={i.toString()}>
           <div>{`トランザクションID: ${tx.id}`}</div>
@@ -33,6 +33,9 @@ const TransactionPool: React.FC<ITransactionPoolProps> = (props) => {
           <div>{`作成時間: ${tx.createdAt}`}</div>
         </TxPoolContainer>
       ))}
+      {getTxPoolRes?.transactionPool.length === 0 && (
+        <div>トランザクションプールに現在トランザクションは入っていません</div>
+      )}
     </Container>
   );
 };

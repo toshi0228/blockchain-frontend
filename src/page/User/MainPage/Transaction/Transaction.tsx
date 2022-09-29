@@ -25,7 +25,7 @@ const Transaction: React.FC<ITransactionProps> = (props) => {
 
   return (
     <Container>
-      トランザクション
+      <h2>トランザクション</h2>
       {getTxRes?.transactions?.map((tx, i) => (
         <TxContainer key={i.toString()}>
           <div>{`トランザクションID: ${tx.id}`}</div>
