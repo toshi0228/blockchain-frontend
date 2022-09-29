@@ -3,6 +3,7 @@ const apiPath = {
   authSignUp: "/auth/signup",
   authLogin: "/auth/login",
   transaction: "/transaction",
+  transactionPool: "/transactionPool",
   block: "/block",
 };
 

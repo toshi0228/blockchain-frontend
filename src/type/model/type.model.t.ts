@@ -32,3 +32,13 @@ export type Transaction = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+// トランザクションプール
+export type TransactionPool = {
+  id: number;
+  senderAddress: string;
+  recipientAddress: string;
+  amount: number;
+  createdAt: Date;
+  updatedAt: Date;
+};

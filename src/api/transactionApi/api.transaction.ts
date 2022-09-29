@@ -18,7 +18,7 @@ class TransactionService extends ServiceBase {
    * @param
    */
   async create(data: CreateTransactionRequest, params?: QueryParams) {
-    return await this.post<CreateTransactionResponse, CreateTransactionRequest>("***", data, params);
+    return await this.post<CreateTransactionResponse, CreateTransactionRequest>(apiPath.transaction, data, params);
   }
 
   /**

@@ -1,10 +1,11 @@
-export type GetTransactionPoolResponse = {}[]
+import { TransactionPool } from "type/model/type.model.t";
 
-export type GetTransactionPoolByIdResponse = {}
+export type GetTransactionPoolResponse = { transactionPool: TransactionPool[] };
 
-export type CreateTransactionPoolResponse = {}
+export type GetTransactionPoolByIdResponse = {};
 
-export type UpdateTransactionPoolResponse = {}
+export type CreateTransactionPoolResponse = {};
 
-export type DeleteTransactionPoolByIdResponse = {}
+export type UpdateTransactionPoolResponse = {};
 
+export type DeleteTransactionPoolByIdResponse = {};

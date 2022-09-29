@@ -18,7 +18,6 @@ const Transaction: React.FC<ITransactionProps> = (props) => {
     api.transaction
       .getList()
       .then((res) => {
-        debugger;
         setGetTxRes(res.data);
       })
       .catch((e) => console.log(e));
