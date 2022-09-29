@@ -1,5 +1,5 @@
 ---
-to: src/pages/<%= dir %>/<%= category %>/<%= name %>/<%= name %>.tsx
+to: src/page/<%= dir %>/<%= category %>/<%= name %>/<%= name %>.tsx
 unless_exists: true
 ---
 import * as React from 'react';

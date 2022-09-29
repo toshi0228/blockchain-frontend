@@ -23,6 +23,7 @@ export interface CryptKey {
   publicKey: string;
 }
 
+// トランザクション
 export type Transaction = {
   id: number;
   senderAddress: string;
