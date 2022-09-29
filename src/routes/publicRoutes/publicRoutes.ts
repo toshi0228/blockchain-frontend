@@ -1,4 +1,4 @@
-import { paths } from "../../config";
+import { path } from "config";
 
 import Top from "pages/User/MainPage/Top";
 import Setting from "pages/User/MyPage/Setting";
@@ -9,23 +9,23 @@ import Transaction from "pages/User/MainPage/Transaction";
 const publicRoutes = [
   {
     page: Top,
-    path: paths.root,
+    path: path.root,
   },
   {
     page: Setting,
-    path: paths.setting,
+    path: path.setting,
   },
   {
     page: Login,
-    path: paths.login,
+    path: path.login,
   },
   {
     page: SignUp,
-    path: paths.singUp,
+    path: path.singUp,
   },
   {
     page: Transaction,
-    path: paths.transaction,
+    path: path.transaction,
   },
 ];
 

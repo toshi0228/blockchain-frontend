@@ -2,8 +2,6 @@ import axios from "axios";
 import { jwt } from "helpers";
 
 export default class ServiceBase {
-  constructor() {}
-
   /**
    *
    * @param endpoint

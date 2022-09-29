@@ -1,4 +1,4 @@
-export default {
+export const path = {
   // all
   root: "/",
 

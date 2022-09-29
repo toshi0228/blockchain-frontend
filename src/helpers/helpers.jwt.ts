@@ -1,8 +1,7 @@
 class JwtService {
-  constructor() {}
-
   async getVerifiedKeys() {
     const token = "tokenを取得";
+    console.log(token);
   }
 }
 

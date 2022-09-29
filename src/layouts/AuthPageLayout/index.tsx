@@ -1,6 +1,6 @@
 import * as React from "react";
 import RouteList from "routes";
-import { paths } from "config";
+import { path } from "config";
 import { Container, UserInfoContainer } from "./style";
 import { Link } from "react-router-dom";
 import { Wallet, User } from "entity";
@@ -42,37 +42,37 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
       <nav>
         <ul>
           <li>
-            <Link to={paths.root}>ホーム</Link>
+            <Link to={path.root}>ホーム</Link>
           </li>
 
           <li>
-            <Link to={paths.login}>ログイン</Link>
+            <Link to={path.login}>ログイン</Link>
           </li>
 
           <li>
-            <Link to={paths.singUp}>新規登録</Link>
+            <Link to={path.singUp}>新規登録</Link>
           </li>
 
           <li>
-            <Link to={paths.transaction}>トランザクション確認</Link>
+            <Link to={path.transaction}>トランザクション確認</Link>
           </li>
 
           <li>
-            <Link to={paths.transactionPool}>トランザクションプールの確認</Link>
+            <Link to={path.transactionPool}>トランザクションプールの確認</Link>
           </li>
 
           <li>
-            <Link to={paths.setting}>マイページ</Link>
+            <Link to={path.setting}>マイページ</Link>
           </li>
 
           <li>
-            <Link to={paths.setting} onClick={() => createBlock()}>
+            <Link to={path.setting} onClick={() => createBlock()}>
               ブロックを作成
             </Link>
           </li>
 
           <li>
-            <Link to={paths.setting} onClick={() => logout()}>
+            <Link to={path.setting} onClick={() => logout()}>
               ログアウト
             </Link>
           </li>
