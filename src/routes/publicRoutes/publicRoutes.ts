@@ -1,10 +1,10 @@
 import { path } from "config";
 
-import Top from "pages/User/MainPage/Top";
-import Setting from "pages/User/MyPage/Setting";
-import Login from "pages/User/Auth/Login";
-import SignUp from "pages/User/Auth/SignUp";
-import Transaction from "pages/User/MainPage/Transaction";
+import Top from "page/User/MainPage/Top";
+import Setting from "page/User/MyPage/Setting";
+import Login from "page/User/Auth/Login";
+import SignUp from "page/User/Auth/SignUp";
+import Transaction from "page/User/MainPage/Transaction";
 
 const publicRoutes = [
   {
