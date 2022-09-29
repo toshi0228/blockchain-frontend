@@ -1,5 +1,5 @@
 import * as React from "react";
-import RouteList from "routes";
+import RouteList from "router";
 import { path } from "config";
 import { Container, UserInfoContainer } from "./style";
 import { Link } from "react-router-dom";
