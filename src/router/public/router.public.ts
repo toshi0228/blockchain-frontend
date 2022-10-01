@@ -8,7 +8,7 @@ import Transaction from "page/User/MainPage/Transaction";
 import TransactionPool from "page/User/MainPage/TransactionPool";
 import BlockChain from "page/User/MainPage/BlockChain";
 
-const routerPublic = [
+export const routerPublic = [
   {
     page: Top,
     path: path.root,
@@ -38,5 +38,3 @@ const routerPublic = [
     path: path.block,
   },
 ];
-
-export default routerPublic;

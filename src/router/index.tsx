@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import * as React from "react";
-import { publicRoutes } from "./publicRouter";
+import { routerPublic } from "./public/router.public";
 
 const RouteList = () => {
   return (
     <Routes>
-      {publicRoutes.map((route, index) => {
+      {routerPublic.map((route, index) => {
         return <Route key={index.toString()} path={route.path} element={<route.page />} />;
       })}
     </Routes>
