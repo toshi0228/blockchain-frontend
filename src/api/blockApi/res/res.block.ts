@@ -1,10 +1,13 @@
-export type GetBlockResponse = {}[]
+import { Block } from "type/model/type.model.t";
 
-export type GetBlockByIdResponse = {}
+export type GetBlockResponse = {
+  blockChain: Block[];
+};
 
-export type CreateBlockResponse = {}
+export type GetBlockByIdResponse = {};
 
-export type UpdateBlockResponse = {}
+export type CreateBlockResponse = {};
 
-export type DeleteBlockByIdResponse = {}
+export type UpdateBlockResponse = {};
 
+export type DeleteBlockByIdResponse = {};

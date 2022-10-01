@@ -17,6 +17,16 @@ export interface Wallet {
   updatedAt: Date;
 }
 
+// ブロック
+export type Block = {
+  id: number;
+  nonce: number;
+  transactions: string;
+  previousHash: string;
+  timestamp: number;
+  hash: string;
+};
+
 // 鍵
 export interface CryptKey {
   privateKey: string;
