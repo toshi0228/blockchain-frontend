@@ -25,7 +25,7 @@ class BlockService extends ServiceBase {
    * @param
    */
   async getList(params?: QueryParams) {
-    return await this.get<GetBlockResponse>("***", params);
+    return await this.get<GetBlockResponse>(apiPath.block, params);
   }
 
   /**

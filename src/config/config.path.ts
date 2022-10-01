@@ -5,6 +5,8 @@ export const path = {
   // user
   login: "/login",
   singUp: "/sing-up",
+
+  block: "/block",
   transaction: "/transaction",
   transactionPool: "/transaction-pool",
 

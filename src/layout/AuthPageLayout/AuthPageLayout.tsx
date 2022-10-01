@@ -54,6 +54,10 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <li>
+            <Link to={path.block}>ブロックの確認</Link>
+          </li>
+
+          <li>
             <Link to={path.transaction}>トランザクション確認</Link>
           </li>
 

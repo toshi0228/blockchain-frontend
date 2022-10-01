@@ -6,6 +6,7 @@ import Login from "page/User/Auth/Login";
 import SignUp from "page/User/Auth/SignUp";
 import Transaction from "page/User/MainPage/Transaction";
 import TransactionPool from "page/User/MainPage/TransactionPool";
+import BlockChain from "page/User/MainPage/BlockChain";
 
 const routerPublic = [
   {
@@ -31,6 +32,10 @@ const routerPublic = [
   {
     page: TransactionPool,
     path: path.transactionPool,
+  },
+  {
+    page: BlockChain,
+    path: path.block,
   },
 ];
 
