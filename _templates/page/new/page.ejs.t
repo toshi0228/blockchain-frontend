@@ -2,7 +2,7 @@
 to: src/page/<%= dir %>/<%= category %>/<%= name %>/<%= name %>.tsx
 unless_exists: true
 ---
-import * as React from 'react';
+import React from 'react';
 
 import { Container } from './style';
 
