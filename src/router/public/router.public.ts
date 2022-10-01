@@ -7,6 +7,7 @@ import SignUp from "page/User/Auth/SignUp";
 import Transaction from "page/User/MainPage/Transaction";
 import TransactionPool from "page/User/MainPage/TransactionPool";
 import BlockChain from "page/User/MainPage/BlockChain";
+import VerifyBlock from "page/User/MainPage/VerifyBlock";
 
 export const routerPublic = [
   {
@@ -36,5 +37,9 @@ export const routerPublic = [
   {
     page: BlockChain,
     path: path.block,
+  },
+  {
+    page: VerifyBlock,
+    path: path.blockVerify,
   },
 ];

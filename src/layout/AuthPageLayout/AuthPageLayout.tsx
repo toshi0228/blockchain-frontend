@@ -64,9 +64,7 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <div>
-            <Link to={path.setting} onClick={() => createBlock()}>
-              改竄されていないか検証
-            </Link>
+            <Link to={path.blockVerify}>改竄されていないか検証</Link>
           </div>
 
           <li>

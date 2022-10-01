@@ -4,10 +4,16 @@ export type GetBlockResponse = {
   blockChain: Block[];
 };
 
-export type GetBlockByIdResponse = {};
+export type GetVerifyBlockResponse = {
+  verifyBlockChain: {
+    id: number;
+    nonce: number;
+    transactions: string;
+    previousHash: string;
+    timestamp: number;
+    hash: string;
+    isCleanData: boolean;
+  }[];
+};
 
 export type CreateBlockResponse = {};
-
-export type UpdateBlockResponse = {};
-
-export type DeleteBlockByIdResponse = {};
