@@ -58,6 +58,18 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
           </li>
 
           <li>
+            <Link to={path.setting} onClick={() => createBlock()}>
+              ブロックを作成
+            </Link>
+          </li>
+
+          <div>
+            <Link to={path.setting} onClick={() => createBlock()}>
+              改竄されていないか検証
+            </Link>
+          </div>
+
+          <li>
             <Link to={path.transaction}>トランザクション確認</Link>
           </li>
 
@@ -67,12 +79,6 @@ const AuthPageLayout: React.FC<IAuthPageLayoutProps> = (props) => {
 
           <li>
             <Link to={path.setting}>マイページ</Link>
-          </li>
-
-          <li>
-            <Link to={path.setting} onClick={() => createBlock()}>
-              ブロックを作成
-            </Link>
           </li>
 
           <li>

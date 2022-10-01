@@ -29,8 +29,8 @@ const BlockChain: React.FC<IBlockChainProps> = (props) => {
       {getBlockRes?.blockChain.map((b, i) => {
         return (
           <BlockContainer>
-            <div>{`一つ前のブロックハッシュ: ${b.previousHash}`}</div>
             <div>{`ブロック番号: ${b.id}`}</div>
+            <div>{`一つ前のブロックハッシュ: ${b.previousHash}`}</div>
             <div>{`ナンス: ${b.nonce}`}</div>
             <div>{`タイムスタンプ: ${b.timestamp}`}</div>
             <div>トランザクション:</div>
